@@ -11,7 +11,7 @@
 			"location": {
 				"type": "AzureBlobFSLocation",
 				"folderPath": {
-					"value": "@formatDateTime(utcNow(),'yyyy-MM-dd')",
+					"value": "@formatDateTime(string(utcNow()),'yyyy-MM-dd')",
 					"type": "Expression"
 				},
 				"fileSystem": "sink"
