@@ -16,7 +16,7 @@
 				},
 				"fileSystem": "sink"
 			},
-			"compressionCodec": "snappy"
+			"compressionCodec": "none"
 		},
 		"schema": [
 			{
