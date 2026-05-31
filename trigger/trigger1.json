@@ -8,6 +8,10 @@
 				"pipelineReference": {
 					"referenceName": "Schedule Pipeline",
 					"type": "PipelineReference"
+				},
+				"parameters": {
+					"source": "Shankar",
+					"table": "Orders"
 				}
 			}
 		],
