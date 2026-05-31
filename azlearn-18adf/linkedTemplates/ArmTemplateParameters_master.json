@@ -23,6 +23,12 @@
 		"src_datalake_properties_typeProperties_url": {
 			"value": "https://shan18cc.dfs.core.windows.net/"
 		},
+		"trigger1_properties_Schedule Pipeline_parameters_source": {
+			"value": "Shankar"
+		},
+		"trigger1_properties_Schedule Pipeline_parameters_table": {
+			"value": "Orders"
+		},
 		"containerUri": {
 			"value": ""
 		},

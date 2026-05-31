@@ -30,6 +30,14 @@
 		"src_datalake_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://shan18cc.dfs.core.windows.net/"
+		},
+		"trigger1_properties_Schedule Pipeline_parameters_source": {
+			"type": "string",
+			"defaultValue": "Shankar"
+		},
+		"trigger1_properties_Schedule Pipeline_parameters_table": {
+			"type": "string",
+			"defaultValue": "Orders"
 		}
 	},
 	"variables": {
@@ -360,7 +368,7 @@
 							"headers": {},
 							"url": "https://prod-30.southindia.logic.azure.com:443/workflows/a529ddc7439a44c9b40e7cb164f56170/triggers/When_an_HTTP_request_is_received/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2FWhen_an_HTTP_request_is_received%2Frun&sv=1.0&sig=zRt2A1sQVrfX0RVsHMLZ-cmt8rDyDBaNqvG-mPqHjnM",
 							"body": {
-								"value": "{\n    \"pipeline name\":@{pipeline().Pipeline},\n     \"pipeline runid\": @{pipeline().RunId}\n}",
+								"value": "{\n    \"pipeline name\":\"@{pipeline().Pipeline}\",\n     \"pipeline runid\": \"@{pipeline().RunId}\"\n}",
 								"type": "Expression"
 							}
 						}
@@ -694,7 +702,10 @@
 							"referenceName": "Schedule Pipeline",
 							"type": "PipelineReference"
 						},
-						"parameters": {}
+						"parameters": {
+							"source": "[parameters('trigger1_properties_Schedule Pipeline_parameters_source')]",
+							"table": "[parameters('trigger1_properties_Schedule Pipeline_parameters_table')]"
+						}
 					}
 				],
 				"type": "ScheduleTrigger",
