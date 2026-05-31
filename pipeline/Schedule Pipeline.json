@@ -47,6 +47,16 @@
 				}
 			}
 		],
+		"parameters": {
+			"source": {
+				"type": "string",
+				"defaultValue": "shankar"
+			},
+			"table": {
+				"type": "string",
+				"defaultValue": "orders"
+			}
+		},
 		"annotations": []
 	}
 }
