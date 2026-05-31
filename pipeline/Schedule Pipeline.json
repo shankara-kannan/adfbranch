@@ -17,6 +17,34 @@
 					},
 					"waitOnCompletion": true
 				}
+			},
+			{
+				"name": "Alerts",
+				"type": "WebActivity",
+				"dependsOn": [
+					{
+						"activity": "Execute Pipeline1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"method": "POST",
+					"url": "https://prod-30.southindia.logic.azure.com:443/workflows/a529ddc7439a44c9b40e7cb164f56170/triggers/When_an_HTTP_request_is_received/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2FWhen_an_HTTP_request_is_received%2Frun&sv=1.0&sig=zRt2A1sQVrfX0RVsHMLZ-cmt8rDyDBaNqvG-mPqHjnM",
+					"body": {
+						"value": "{\n    \"pipeline name\":@{pipeline().Pipeline},\n     \"pipeline runid\": @{pipeline().RunId}\n}",
+						"type": "Expression"
+					}
+				}
 			}
 		],
 		"annotations": []
